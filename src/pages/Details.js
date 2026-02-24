@@ -5,7 +5,6 @@ import './Details.css';
 const Details = () => {
   const location = useLocation();
   const navigate = useNavigate();
-  const { emp } = location.state || {};
   const [capturing, setCapturing] = useState(false);
   const videoRef = useRef(null);
   const canvasRef = useRef(null);
@@ -24,9 +23,9 @@ const Details = () => {
     canvas.height = video.videoHeight;
     canvas.getContext('2d').drawImage(video, 0, 0);
     const imgData = canvas.toDataURL('image/png');
-    video.srcObject.getTracks().forEach(track => track.stop());
-    setCapturing(false);
-    navigate('/photo', { state: { imgData, emp } });
+      video.srcObject.getTracks().forEach(track => track.stop());
+      setCapturing(false);
+      navigate('/photo', { state: { imgData } });
   };
 
   if (!emp) return <div className="details-error">No employee data found.</div>;
