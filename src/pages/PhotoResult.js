@@ -5,7 +5,7 @@ import './PhotoResult.css';
 const PhotoResult = () => {
   const location = useLocation();
   const navigate = useNavigate();
-  const { imgData, emp } = location.state || {};
+  const { imgData } = location.state || {};
 
   if (!imgData) return <div className="photo-error">No photo captured.</div>;
 

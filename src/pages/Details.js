@@ -7,7 +7,6 @@ const Details = () => {
   const navigate = useNavigate();
   const { emp } = location.state || {};
   const [capturing, setCapturing] = useState(false);
-  const [image, setImage] = useState(null);
   const videoRef = useRef(null);
   const canvasRef = useRef(null);
 
@@ -25,7 +24,6 @@ const Details = () => {
     canvas.height = video.videoHeight;
     canvas.getContext('2d').drawImage(video, 0, 0);
     const imgData = canvas.toDataURL('image/png');
-    setImage(imgData);
     video.srcObject.getTracks().forEach(track => track.stop());
     setCapturing(false);
     navigate('/photo', { state: { imgData, emp } });
