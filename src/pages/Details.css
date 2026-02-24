@@ -1,0 +1,6 @@
+.details-container { padding: 2rem; }
+.details-info { margin-bottom: 1.5rem; }
+.details-info div { margin-bottom: 0.5rem; }
+.capture-area { margin-top: 1rem; }
+.capture-area video { border: 1px solid #ccc; border-radius: 4px; }
+.details-error { color: #d90429; padding: 2rem; }
